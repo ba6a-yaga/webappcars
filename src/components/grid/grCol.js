@@ -1,40 +1,78 @@
 import React from 'react'
-import Radium, {StyleRoot,Style} from 'radium'
 
-const Col = (props) => {
+class Col extends React.Component {
 
-    let rules = {
-        '.col': {
-            display: 'flex',
-            width: props.tb*10 + 'vw',
-            ...props.styleProperties
-        },
-        mediaQueries: {
-            '(max-width: 980px)': {
-                '.col': {
-                    width: (typeof props.tb == 'number' && props.tb > 0) ? props.tb*10 + 'vw' : '100vw',
-                    backgroundColor: 'gray'
-                }
-            },
-            '(max-width: 450px)': {
-                '.col': {
-                    width: (typeof props.mb == 'number' && props.mb > 0) ? props.mb*10 + 'vw' : '100vw',
-                    backgroundColor: 'blue'
-                }
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            style: {
             }
         }
     }
 
-    return (
-        <React.Fragment >
-            <div className={'col'}>
-                {props.children}
+    updateStyle = () => {
+        const resolution = {
+            mb:450,
+            tb:800,
+            dt:1280,
+        }
+        const width = window.innerWidth;
+        switch(true) {
+            case width <= resolution.mb:
+                this.setState({
+                    style:{
+                        // position:'relative',
+                        display: (this.props.mb === 0) ? 'none':'flex',
+                        flexGrow: this.props.mb,
+                        flexBasis: '0px',
+                    }
+                })
+                break
+            case width <= resolution.tb:
+                // console.log()
+                this.setState({
+                    style:{
+                        // position:'relative',
+                        display: (this.props.tb === 0) ? 'none':'flex',
+                        flexGrow: this.props.tb,
+                        flexBasis: '0px',
+                    }
+                })
+                break
+            default:
+                this.setState({
+                    style:{
+                        // position:'relative',
+                        display: (this.props.dt === 0) ? 'none':'flex',
+                        flexGrow: this.props.dt,
+                        flexBasis: '0px',
+                    }
+                })
+                break
+
+        }
+    }
+
+    componentWillMount() {
+        this.updateStyle()
+    }
+
+    componentDidMount() {
+        window.addEventListener("resize", this.updateStyle)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateStyle)
+    }
+
+    render() {
+        return (
+            <div className={this.props.className} id={this.props.id} style={{...this.state.style,...this.props.styleProperties}}>
+                {this.props.children}
             </div>
-            <Style
-                rules={rules}
-            />
-        </React.Fragment>
-    )
+        )
+    }
 }
 
 export default Col

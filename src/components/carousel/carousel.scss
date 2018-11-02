@@ -1,0 +1,27 @@
+@import "../../index.scss";
+
+.textPreview {
+  transform: rotateZ(180deg);
+  font-family: HeliosCondBlack;
+  text-align: center;
+  cursor: default;
+  writing-mode: tb-rl;
+  color: #1D1D1B;
+  opacity: 0.2;
+  font-size: 21px;
+  bottom:0;
+  margin-left: 30%;
+}
+
+.titleCarousel {
+  font-family: HeliosCondBlack;
+  z-index: 1;
+  align-self: flex-start;
+  color: black;
+  cursor: default;
+  font-size: 6vw;
+  width: 250px;
+  height: 120px;
+  margin-top: -30px;
+  margin-left: 50px;
+}

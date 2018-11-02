@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Helios';
+  font-style: normal;
+  src:
+      local('HeliosC'),
+      url('../../static/fonts/HeliosC.otf') format('otf');
+}
+
+@font-face {
+  font-family: 'Helios-Bold';
+  font-style: normal;
+  src:
+      local('HeliosC-Bold'),
+      url('../../static/fonts/HeliosC-Bold.otf') format('otf'),
+      url('../../static/fonts/HeliosC-Bold.ttf')  format('truetype'),
+      url('../../static/fonts/HeliosC-Bold.svg#svgFontName') format('svg');
+}
+
+@font-face {
+  font-family: 'HeliosCondBlack';
+  font-style: normal;
+  src:
+      local('HeliosCondBlackC'),
+      url('../../static/fonts/HeliosCondBlackC.otf') format('otf'),
+      url('../../static/fonts/HeliosCondBlackC.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'HeliosCond-Bold';
+  font-style: normal;
+  src:
+      local('HeliosCondC-Bold'),
+      url('../../static/fonts/HeliosCondC-Bold.otf') format('otf'),
+      url('../../static/fonts/HeliosCondC-Bold.ttf')  format('truetype');
+}

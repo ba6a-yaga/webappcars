@@ -1,0 +1,334 @@
+@font-face {
+    font-family: 'HeliosCond-Bold';
+    font-style: normal;
+    src:
+            local('HeliosCondC-Bold'),
+            url('./static/fonts/HeliosCondC-Bold.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'Helios';
+    font-style: normal;
+    src:
+            local('HeliosC'),
+            url('./static/fonts/HeliosC.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'Helios-Bold';
+    font-style: normal;
+    src:
+            local('HeliosC-Bold'),
+            url('./static/fonts/HeliosC-Bold.otf') format('otf');
+}
+
+.secondSlider-wrapper{
+    width: 100%;
+    display: grid;
+    grid-column-gap: 1px;
+    grid-template-columns: repeat(14,[col] 2fr) ;
+    grid-template-rows: repeat(5, [row] 64px);
+    overflow: hidden;
+
+    .secondSlider-title {
+        z-index: 1;
+        color: black;
+        font-size: 35px;
+        font-family: HeliosCond-Bold;
+        text-transform: uppercase;
+        padding-top: 20px;
+        grid-column: col 1 / span 3;
+        grid-row: 1 / 2;
+    }
+
+    .secondSlider-desc {
+        color: black;
+        font-size: 12px;
+        font-family: Helios;
+        width: 200px;
+        grid-column: col 1 / span 2;
+        grid-row: row 4;
+    }
+
+    .secondSlider-cost {
+        color: #FF1F27;
+        font-size: 22px;
+        font-family: Helios-Bold;
+        grid-column: col 1 / span 3;
+        grid-row: row 5;
+    }
+
+    .secondSlider-img {
+        grid-column: col 5 / 15;
+        grid-row: row 1 / 6;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .secondSlider-btnLeft {
+        grid-column: col 5;
+        grid-row: row 5;
+        align-self: flex-end;
+        justify-self: flex-start;
+        background-color: #ffffff;
+        width:97%;
+        height: 97%;
+    }
+
+    .secondSlider-btnRight {
+        grid-column: col 6;
+        grid-row: row 5;
+        align-self: flex-end;
+        justify-self: flex-start;
+        background-color: #ffffff;
+        width:97%;
+        height: 97%;
+    }
+
+    .secondSlider-btnMain {
+        grid-column: col 11 / 15;
+        grid-row: row 5;
+    }
+}
+
+$card-hor-height: 130px;
+$card-ver-height: 240px;
+
+.block1-wrapper {
+    width: 100%;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, minmax(100px,1fr)) ;
+    grid-template-areas:
+        "title ... ver1"
+        "hor1 hor2 ver1"
+        "ver2 hor3 hor4"
+        "ver2 hor5 hor6"
+        "ver3 hor7 hor8"
+        "ver3 btn ...";
+
+    .block1-title {
+        grid-area: title;
+        grid-column: span 2;
+        text-transform: uppercase;
+        font-family: HeliosCond-Bold;
+        font-size: 35px;
+        max-height: 85px;
+    }
+
+    .block1-btn {
+        grid-area: btn;
+        max-height: 64px;
+        align-self: flex-end;
+    }
+
+    .card-hor1 {
+        background-color: antiquewhite;
+        grid-area: hor1;
+        height: $card-hor-height;
+        align-self: flex-end;
+    }
+    .card-hor2 {
+        background-color: antiquewhite;
+        grid-area: hor2;
+        height: $card-hor-height;
+        align-self: flex-end;
+    }
+    .card-hor3 {
+        background-color: antiquewhite;
+        grid-area: hor3;
+        height: $card-hor-height;
+    }
+    .card-hor4 {
+        background-color: antiquewhite;
+        grid-area: hor4;
+        height: $card-hor-height;
+    }
+    .card-hor5 {
+        background-color: antiquewhite;
+        grid-area: hor5;
+        height: $card-hor-height;
+    }
+    .card-hor6 {
+        background-color: antiquewhite;
+        grid-area: hor6;
+        height: $card-hor-height;
+    }
+    .card-hor7 {
+        background-color: antiquewhite;
+        grid-area: hor7;
+        height: $card-hor-height;
+    }
+    .card-hor8 {
+        background-color: antiquewhite;
+        grid-area: hor8;
+        height: $card-hor-height;
+    }
+
+    .card-ver1 {
+        background-color: mistyrose;
+        grid-area: ver1;
+        height: $card-ver-height;
+    }
+
+    .card-ver2 {
+        background-color: mistyrose;
+        grid-area: ver2;
+        height: $card-ver-height;
+    }
+
+    .card-ver3 {
+        background-color: mistyrose;
+        grid-area: ver3;
+        height: $card-ver-height;
+    }
+}
+
+.leftBlockAbout-wrapper {
+    display: grid;
+    background-color: #F3F1F3;
+    height: 500px;
+    width:100%;
+
+    .blockAbout-cntr {
+        align-self: center;
+        justify-self: center;
+        width:80%;
+        height:80%;
+        display: grid;
+
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, minmax(50px,1fr));
+        grid-auto-rows: auto;
+
+        .blockAbout-title {
+            font-family: HeliosCond-Bold;
+            font-size: 35px;
+            text-transform: uppercase;
+
+            grid-column: 1 / 3;
+            grid-row: 1;
+        }
+
+        .blockAbout-desc {
+            font-family: Helios;
+            font-size: 12px;
+            align-self: flex-end;
+
+            grid-column: 1 / 3;
+            grid-row: 1;
+        }
+
+        .blockAbout-tile {
+            align-self: center;
+            justify-self: flex-start;
+            width:100%;
+            height: 100%;
+        }
+
+        .tileIcon {
+            width: 58px;
+            height: 100%;
+            background-color: white;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .tileTitle {
+            font-family: Helios-Bold;
+            font-size: 12px;
+            width:100%;
+        }
+
+        .tileDesc {
+            font-family: Helios;
+            font-size: 12px;
+            width:100%;
+        }
+    }
+}
+
+.rightBlockAbout-wrapper {
+    display:grid;
+    background-color: #FF1F27;
+    height: 500px;
+    width:100%;
+
+    .blockAbout-cntr {
+        background-color: #1D1D1B;
+        align-self: center;
+        justify-self: center;
+        width:80%;
+        height:80%;
+    }
+}
+
+
+.titlePartners {
+    font-family: HeliosCond-Bold;
+    font-size: 35px;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.blockPartners-wrapper {
+    display:grid;
+    width:100%;
+    grid-gap:10px;
+    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+
+    .blockPartners-tile {
+        width:100%;
+        height: 100%;
+
+        .tileIcon {
+            width: 58px;
+            height: 100%;
+            background-color: gray;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .tileTitle {
+            font-family: Helios-Bold;
+            font-size: 12px;
+            width:100%;
+        }
+
+        .tileDesc {
+            font-family: Helios;
+            font-size: 12px;
+            width:100%;
+        }
+    }
+}
+
+.blockRightFooter-wrapper {
+    width: 100%;
+    height: 250px;
+    background-color: antiquewhite;
+}
+
+.blockLeftFooter-wrapper {
+    width:100%;
+    height: 250px;
+    background-color: #FF1F27;
+
+    display: grid;
+
+    .blockFooter-cntr {
+        align-self: center;
+        justify-self: center;
+        width:80%;
+        height:80%;
+    }
+}
+
+
+
+

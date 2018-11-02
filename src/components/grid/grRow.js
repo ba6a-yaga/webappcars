@@ -1,11 +1,11 @@
 import React from 'react'
+import Radium from 'radium'
 
 const Row = (props) => {
     let style = {
         grRow: {
             display: 'flex',
             flexDirection: 'row',
-            border: 'solid 1px #000'
         }
     }
 
@@ -14,10 +14,10 @@ const Row = (props) => {
     }
 
     return (
-        <div style={style.grRow}>
+        <div className={props.className} id={props.id} style={style.grRow}>
             {props.children}
         </div>
     )
 }
 
-export default Row
+export default Radium(Row)
