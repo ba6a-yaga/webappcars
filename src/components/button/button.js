@@ -6,11 +6,11 @@ import Col from '../grid/grCol'
 
 const Button = (props) => {
     return (
-        <Row id={props.id} className={props.className} styleProperties={{...props.styleProperties}}>
-            <Col dt={1} tb={1} mb={1}>
+        <Row onClick={props.onClick} id={props.id} className={props.className} styleProperties={{justifyContent:'center',...props.styleProperties}}>
+            <Col>
                 <p style={(typeof props.text === 'undefined')? ({display:'none'}):{...props.textProperties}} className={'buttonText'}>{props.text}</p>
             </Col>
-            <Col dt={1} tb={1} mb={1}>
+            <Col>
                 {props.children}
             </Col>
         </Row>

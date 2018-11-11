@@ -7,38 +7,14 @@ import './menu.scss'
 
 class Menu extends React.Component {
 
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            elements:[],
-
-        }
-    }
-
-    handleSelectedMenuItem = () => {
-        // Выезжающая панель
-    }
-
-    componentWillMount() {
-        this.setState({
-            elements: [
-                {name: "Аренда", link: "#", isElementSelect:true, active:false, handleClick:this.handleSelectedMenuItem},
-                {name: "О компании", link: "#"},
-                {name: "Партнеры", link: "#"},
-                {name: "Контакты", link: "#"},
-            ]
-        })
-    }
-
     render() {
         const style = {
             rowMenu: {
-                justifyContent: 'space-between',
                 height: 80
             },
             leftMenu: {
-                alignItems: 'center'
+                alignItems: 'center',
+                justifyContent: 'flex-start'
             },
             rightMenu: {
                 alignItems: 'center',
@@ -57,14 +33,17 @@ class Menu extends React.Component {
         return (
             <React.Fragment>
                 <Row styleProperties={style.rowMenu} className={'row-menu'}>
-                    <Col dt={1} tb={1} mb={0}/>
-                    <Col styleProperties={style.leftMenu} mb={4} tb={4} dt={4}>
+                    <Col hd={1} />
+                    <Col hd={1} dt={1} tb={0} mb={0}/>
+                    <Col styleProperties={style.leftMenu} hd={4} dt={5} tb={6} mb={5}>
                         <img className={'logo'} src={logo} alt={''}/>
                     </Col>
-                    <Col styleProperties={style.rightMenu} mb={4} tb={4} dt={4}>
-                        <MenuList elements={this.state.elements}/>
+                    <Col styleProperties={style.rightMenu} hd={4} mb={0} tb={6} dt={5}>
+                        <MenuList position={'bottom'} size={100} elements={this.props.elements}/>
                     </Col>
-                    <Col dt={1} tb={1} mb={0} styleProperties={{backgroundColor:'#FF1F27'}}></Col>
+                    <Col hd={0} dt={0} tb={0} mb={5}/>
+                    <Col hd={1} dt={1} tb={0} mb={0} styleProperties={{backgroundColor: '#FF1F27'}}></Col>
+                    <Col hd={1} />
                 </Row>
             </React.Fragment>
         )

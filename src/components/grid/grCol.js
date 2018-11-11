@@ -13,9 +13,10 @@ class Col extends React.Component {
 
     updateStyle = () => {
         const resolution = {
-            mb:450,
-            tb:800,
-            dt:1280,
+            mb:800,
+            tb:1024,
+            dt:1366,
+            hd:1920,
         }
         const width = window.innerWidth;
         switch(true) {
@@ -40,7 +41,7 @@ class Col extends React.Component {
                     }
                 })
                 break
-            default:
+            case width <= resolution.dt:
                 this.setState({
                     style:{
                         // position:'relative',
@@ -50,6 +51,17 @@ class Col extends React.Component {
                     }
                 })
                 break
+            default:
+                this.setState({
+                    style:{
+                        // position:'relative',
+                        display: (this.props.hd === 0) ? 'none':'flex',
+                        flexGrow: this.props.hd,
+                        flexBasis: '0px',
+                    }
+                })
+                break
+
 
         }
     }

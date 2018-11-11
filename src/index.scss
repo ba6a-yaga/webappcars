@@ -3,7 +3,8 @@
   font-style: normal;
   src:
       local('HeliosC'),
-      url('../../static/fonts/HeliosC.otf') format('otf');
+      url('../../static/fonts/HeliosC.otf') format('otf'),
+      url('../../static/fonts/HeliosC.ttf') format('truetype');
 }
 
 @font-face {

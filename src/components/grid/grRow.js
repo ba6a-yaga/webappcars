@@ -14,7 +14,7 @@ const Row = (props) => {
     }
 
     return (
-        <div className={props.className} id={props.id} style={style.grRow}>
+        <div onClick={props.onClick} className={props.className} id={props.id} style={style.grRow}>
             {props.children}
         </div>
     )

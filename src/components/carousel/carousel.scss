@@ -1,27 +1,219 @@
 @import "../../index.scss";
 
+@keyframes showUp1 {
+  from {
+    opacity: 0;
+    margin-top: -30px;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes showUpWithoutOpacity {
+  from {
+    opacity: 0;
+    margin-top: -70px;
+  }
+
+  to {
+    opacity: 0.2;
+  }
+}
+
+@keyframes changeSlide {
+  from {
+    display: none;
+  }
+
+  to {
+    display: block;
+  }
+}
+
+.animationShowWithoutOpacity {
+  animation: showUpWithoutOpacity 1s forwards;
+}
+
+.animationShow {
+  animation: showUp1 1s forwards;
+}
+
 .textPreview {
+  opacity: 0;
   transform: rotateZ(180deg);
   font-family: HeliosCondBlack;
-  text-align: center;
   cursor: default;
   writing-mode: tb-rl;
   color: #1D1D1B;
-  opacity: 0.2;
   font-size: 21px;
-  bottom:0;
-  margin-left: 30%;
+
+  text-align: center;
 }
 
 .titleCarousel {
   font-family: HeliosCondBlack;
-  z-index: 1;
-  align-self: flex-start;
+  z-index: 3;
   color: black;
   cursor: default;
-  font-size: 6vw;
-  width: 250px;
-  height: 120px;
-  margin-top: -30px;
-  margin-left: 50px;
+  width: 300px;
+
+  font-size: 90px;
+  padding-left: 90px;
+  margin-top: -50px;
+
+  position: absolute;
+  transition: ease 1s;
+
+  @media (max-width: 1366px) {
+    font-size: 80px;
+    padding-left: 90px;
+    margin-top: -45px;
+  }
+  @media (max-width: 1024px) {
+    font-size: 70px;
+    padding-left: 70px;
+    margin-top: -40px;
+  }
+  @media (max-width: 800px) {
+    font-size: 60px;
+    padding-left: 70px;
+    margin-top: -35px;
+  }
+  @media (max-width: 650px) {
+    font-size: 50px;
+    padding-left: 70px;
+    margin-top: -30px;
+  }
+  @media (max-width: 530px) {
+    font-size: 35px;
+    padding-left: 70px;
+    margin-top: -20px;
+  }
+}
+
+.centralBlock-wrapper {
+  width:100%;
+  height: 500px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3, 1fr);
+  overflow: hidden;
+
+  @media (max-width: 800px) {
+    height: 450px;
+  }
+
+  .imgCarousel-block {
+    z-index: 1;
+    object-fit: cover;
+
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 4;
+
+    .slider-frame ul li img{
+      object-fit: cover;
+
+      @media (max-width: 800px) {
+        height: 450px;
+      }
+
+
+    }
+  }
+
+  .buttonNavNext {
+    z-index:2;
+    background-color: #FF1F27;
+    cursor: pointer;
+    transition: padding 300ms;
+    padding: 10px 15px 10px 10px;
+
+    grid-column: 3;
+    grid-row: 2;
+
+    align-self: center;
+    justify-self: flex-end;
+
+    img {
+      width:12px;
+      height: 25px;
+      color: green;
+    }
+
+    &:hover {
+      padding: 10px 5px 10px 10px;
+    }
+  }
+
+  .buttonNavPrev {
+    z-index:2;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    transition: padding 300ms;
+    padding: 10px 10px 10px 15px;
+
+    grid-column: 1;
+    grid-row: 2;
+
+    align-self: center;
+    justify-self: flex-start;
+
+    img {
+      width:12px;
+      height: 25px;
+      transform: rotateZ(180deg);
+    }
+
+    &:hover {
+      padding: 10px 10px 10px 5px;
+    }
+
+    @media (max-width: 800px) {
+      background-color: #FF1F27;
+    }
+  }
+
+  .centralBlock-btn {
+      width: 100%;
+      z-index:2;
+      background-color:#FFFFFF;
+      cursor: pointer;
+      padding-top: 15px;
+      padding-bottom: 10px;
+      transition: background-color 300ms;
+
+      grid-column: 3;
+      grid-row: 3;
+
+      align-self: flex-end;
+      justify-self: flex-start;
+
+      img {
+        width:80px;
+        height: 25px;
+        align-self: center;
+      }
+
+      &:hover {
+          background-color: #FF1F27;
+
+          .buttonText{
+            color: white;
+          }
+
+          img {
+            background: white;
+          }
+      }
+      &:active {
+        background-color: gray;
+      }
+
+      @media (max-width: 800px) {
+          grid-column: 1 / span 3;
+          grid-row: 3;
+      }
+  }
 }
