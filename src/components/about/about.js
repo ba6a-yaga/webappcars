@@ -41,7 +41,7 @@ const About = (props) => {
                         </div>
                         <div className={'rightBlockAbout-wrapper'}>
                             <div className={'blockAbout-cntr'}>
-                                <video className={'blockAbout-video'} controls>
+                                <video className={'blockAbout-video'} controls autoPlay={true} muted={true} >
                                     <source src={mov}/>
                                 </video>
                             </div>

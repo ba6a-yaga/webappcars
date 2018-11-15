@@ -37,7 +37,7 @@ class Services extends React.Component {
                 }}>
                     <Col hd={2} dt={1} tb={0} mb={0}></Col>
                     <Col hd={8} dt={10} tb={12} mb={12}>
-                        <div id="block1" className={'block1-wrapper'}>
+                        <div id={this.props.nameService} className={'block1-wrapper'}>
                             <div className={'block1-title'} dangerouslySetInnerHTML={{__html:this.props.title}} />
                             {this.props.cardHor.map((card,k) => {
                                 return (

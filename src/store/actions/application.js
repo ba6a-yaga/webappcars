@@ -183,7 +183,7 @@ export function fetchMenu(props) {
                                 Boolean(menu.isElementSelect) ?
                                     elements.push({
                                         name: menu.name,
-                                        link: '#'+menu.link,
+                                        link: menu.link,
                                         isElementSelect: menu.isElementSelect,
                                         active: false,
                                         handleClick: props.handleSelectedMenuItem,
@@ -191,7 +191,7 @@ export function fetchMenu(props) {
                                     }) :
                                     elements.push({
                                         name: menu.name,
-                                        link: '#'+menu.link,
+                                        link: menu.link,
                                     })
                                 )
                         })
@@ -210,24 +210,24 @@ export function fetchMenu(props) {
                             subElements: [
                                 {
                                     name: "Прием и утилизация снега",
-                                    link: "#subSlider",
+                                    link: "subSlider",
                                     handleClick:null,
                                 },
                                 {
                                     name: "Аренда спецтехники",
-                                    link: "#block1",
+                                    link: "block1",
                                     handleClick:null,
                                 },
                                 {
                                     name: "Аренда премиальных автомобилей",
-                                    link: "#block2",
+                                    link: "block2",
                                     handleClick:null,
                                 },
                             ],
                         },
-                        {name: "О компании", link: "#about"},
-                        {name: "Партнеры", link: "#partners"},
-                        {name: "Контакты", link: "#footer"},
+                        {name: "О компании", link: "about"},
+                        {name: "Партнеры", link: "partners"},
+                        {name: "Контакты", link: "footer"},
                     ]
                     dispatch(fetchMenuError(elements))
                 })
@@ -258,7 +258,7 @@ export function activatedMenuList(props) {
             const elements = [
                 {
                     name: els[0].name,
-                    link: '#'+els[0].link,
+                    link: els[0].link,
                     isElementSelect:els[0].isElementSelect,
                     active:!els[0].active,
                     handleClick:props.handleSelectedMenuItem,

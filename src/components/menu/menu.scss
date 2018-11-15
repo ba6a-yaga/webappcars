@@ -18,8 +18,9 @@
         display: grid;
         grid-template-columns: 5fr 1fr;
 
-        .simple, .active {
+        .simple, .active, .withoutSelect{
             outline: none;
+            cursor: pointer;
         }
 
         .simple {
@@ -85,6 +86,9 @@
         }
 
         .withoutSelect {
+            border: none;
+            background-color: rgba(0,0,0,0);
+
             justify-self: flex-end;
             align-self: center;
             font-family: Helios-Bold;
@@ -137,11 +141,17 @@
             z-index: 2;
             grid-template-columns: 1fr;
             grid-template-rows: (auto-fill, 1fr) ;
+            //grid-gap: 10px;
 
-            a {
+            button {
+                cursor: pointer;
+
+                border: none;
+                background-color: rgba(0,0,0,0);
+
                 justify-self: flex-start;
-                align-self: center;
-                padding-left: 15px;
+                align-self: flex-start;
+                //padding-left: 15px;
                 font-family: Helios;
                 font-size: 12px;
                 color: #000;
@@ -149,7 +159,7 @@
 
                 @media (max-width: 800px) {
                     font-size: 10px;
-                    padding-left: 10px;
+                    padding-left: 15px;
                 }
 
                 @media (max-width: 400px) {
@@ -171,7 +181,7 @@
     margin-inline-start: 22px;
 
     @media (max-width: 400px) {
-        margin-inline-start: 15px;
+        margin-inline-start: 25px;
     }
 }
 
@@ -194,12 +204,13 @@
     position: absolute;
     background-color: white;
     width: 230px;
-    height: 80px;
-    margin-block-start: -65px;
+    height: 75px;
+    margin-block-start: -75px;
     margin-inline-start: 22px;
+    padding-top: 20px;
 
     @media (max-width: 400px) {
-        margin-inline-start: 15px;
+        margin-inline-start: 25px;
     }
 }
 

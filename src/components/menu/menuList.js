@@ -3,6 +3,14 @@ import {MdArrowDropDown,MdArrowDropUp} from 'react-icons/md'
 
 class MenuList extends React.Component {
 
+    scrollTo = (id) => {
+        if (id !== "") {
+            console.log("id", id)
+            let element = document.getElementById(id)
+            element.scrollIntoView({block: "start", behavior: "smooth"})
+        }
+    }
+
     render() {
         if (typeof this.props.elements !== 'undefined') {
             const position = this.props.position
@@ -18,9 +26,9 @@ class MenuList extends React.Component {
                                             className={Boolean(e.active) ? 'active' : 'simple'}>{e.name}
                                     </button>
                                     :
-                                    <a href={e.link} onClick={e.handleClick}
+                                    <button onClick={()=>{this.scrollTo(e.link)}}
                                        className={Boolean(e.active) ? 'active' : 'withoutSelect'}>{e.name}
-                                    </a>
+                                    </button>
                                 }
                                 {e.active
                                     ?
@@ -30,9 +38,9 @@ class MenuList extends React.Component {
                                             <div className={'subMenuList'}>
                                                 {e.subElements.map((s, k) => {
                                                     return (
-                                                        <a key={k} href={s.link} onClick={s.handleClick}>
+                                                        <button key={k} onClick={()=>this.scrollTo(s.link)}>
                                                             {s.name}
-                                                        </a>
+                                                        </button>
                                                     )
                                                 })}
                                             </div>

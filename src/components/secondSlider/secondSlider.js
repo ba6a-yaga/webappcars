@@ -53,7 +53,7 @@ class SecondSlider extends React.Component {
                                 }}
                                 onClick={this.props.handleBtn}
                         >
-                            <img width={80} height={25} className={'imgArrow'} alt={""} />
+                            <img className={'imgArrow'} alt={""} />
                         </Button>
                     </div>
                 </Col>
